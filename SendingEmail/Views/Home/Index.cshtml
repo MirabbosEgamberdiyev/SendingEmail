@@ -1,0 +1,48 @@
+﻿@model EmailEntity
+
+<div class="card shadow border-0">
+    <div class="card-header bg-secondary bg-gradient">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>
+                    Send Email
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-2">
+        <div><h3>@ViewBag.Message</h3></div>
+        <form method="post" asp-action="SendEmail" enctype="multipart/form-data">
+    
+            <div class="col-12">
+                <label>To Email</label>
+                <input asp-for="ToEmailAddress" class="form-control" />
+            </div>
+
+            <div class="col-12">
+                <label>Subject</label>
+                <input asp-for="EmailSubject" class="form-control" />
+            </div>
+            <div class="col-12">
+                <label>Message</label>
+                <textarea asp-for="EmailSubject" class="form-control " rows="5" cols="20"> </textarea>
+            </div>
+            <div class="col-12">
+                <label>Select File</label>
+                <input type="file" name="PostedFile" asp-for="AttachmentURL" class="form-control" />
+            </div>
+
+            <br />
+            <div class="row">
+                <div class="col-6" >
+                    <button type="submit" class="btn btn-primary">
+                        Send Email
+                    </button>
+                </div>
+                <div class="col-6">
+
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
